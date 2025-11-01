@@ -1,1 +1,1 @@
-# my-env-settings
+# my-environment-setup
