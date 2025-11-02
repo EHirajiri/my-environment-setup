@@ -169,6 +169,13 @@ Python 3.14.0
 Python 3.14.0
 ```
 
+### Java
+```
+% brew install java
+% echo 'export PATH="/usr/local/opt/openjdk/bin:$PATH"' >> ~/.zprofile
+% echo 'export CPPFLAGS="-I/usr/local/opt/openjdk/include"' >> ~/.zprofile
+```
+
 ### Apidog
 ```
 % brew install --cask apidog
