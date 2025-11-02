@@ -32,6 +32,11 @@ Macの設定の「プライバシーとセキュリティ」中の「画面収�
 ==> google-drive: 116.0.6 (auto_updates)
 ```
 
+### 7-Zip
+```
+brew install sevenzip
+```
+
 ### Clipy
 クリップボード拡張アプリ
 ```
@@ -39,8 +44,10 @@ Macの設定の「プライバシーとセキュリティ」中の「画面収�
 % softwareupdate --install-rosetta --agree-to-license
 % brew info --cask clipy
 ==> clipy: 1.2.1 (auto_updates)
-
 ```
+
+### Kindle
+- App Storeからインストール
 
 ## コミュニケーションツール
 
@@ -131,10 +138,42 @@ brew install pnpm
 % code --version
 1.105.1
 ```
+- 拡張機能
+  - [Japanese Language Pack for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-ja)
+  - [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
+  - [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
+  - [Vitest](https://marketplace.visualstudio.com/items?itemName=vitest.explorer)
+  - [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
 
 ### Android Studio
 ```
-brew install --cask android-studio
+% brew install --cask android-studio
+```
+
+### Python
+```
+% brew search python@3
+==> Formulae
+python@3.10     python@3.12     python@3.14 ✔   bpython         jython
+python@3.11     python@3.13     python@3.9      ipython         cython
+% brew install python@3.14
+% python3 -V 
+Python 3.9.6
+% vi ~/.zprofile
+# 下記を追記
+export PATH="$(brew --prefix python)/libexec/bin:$PATH"
+% . /Users/$(whoami)/.zprofile
+% python --version
+Python 3.14.0
+% python3 --version
+Python 3.14.0
+```
+
+### Apidog
+```
+% brew install --cask apidog
+% brew info --cask apidog
+==> apidog: 2.7.45 (auto_updates)
 ```
 
 ### Docker Desktop for Mac
