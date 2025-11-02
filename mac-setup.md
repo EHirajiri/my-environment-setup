@@ -1,53 +1,160 @@
 # Mac setup
 
-## Homebrewをインストール (2025/11/1時点 v4.6.19)
-
+## Homebrewをインストール
 ※ 最新の情報は[公式ページ](https://brew.sh/ja/)を参照
-
 ```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+% /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
 パス設定
-
 ```
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/$(whoami)/.zprofile
-. /Users/$(whoami)/.zprofile
+% echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/$(whoami)/.zprofile
+% . /Users/$(whoami)/.zprofile
+% brew --version
+Homebrew 4.6.19
 ```
 
-## 必須アプリ
+## ユーティリティ
 
 ### Google Chrome
-
 ```
-brew install google-chrome
+% brew install google-chrome
+% brew info google-chrome 
+==> google-chrome: 142.0.7444.60 (auto_updates)
 ```
 
 Macの設定の「プライバシーとセキュリティ」中の「画面収録とシステムオーディオ録音」に「Google Chrome」を追加する
 
+### Google Drive
+```
+% brew install --cask google-drive
+% brew info --cask google-drive 
+==> google-drive: 116.0.6 (auto_updates)
+```
+
+### Clipy
+クリップボード拡張アプリ
+```
+% brew install --cask clipy
+% softwareupdate --install-rosetta --agree-to-license
+% brew info --cask clipy
+==> clipy: 1.2.1 (auto_updates)
+
+```
+
 ## コミュニケーションツール
 
 ### Slack
-
 ```
-brew install slack
+% brew install slack
+% brew info slack
+==> slack: 4.46.104 (auto_updates)
 ```
 
 ## 開発ツール
 
-## その他
+### Git
+```
+% brew install git
+% brew info git  
+==> git: stable 2.51.2 (bottled), HEAD
+```
+
+設定
+```
+% git config --global user.name "Your Name"
+% git config --global user.email "your.email@mail.com" 
+# 確認
+% git config --global -l
+		user.name=Your Name
+		user.email=your.email@mail.com
+```
+
+GithubのSSH設定
+- SSHキー作成
+```
+% ssh-keygen -t ed25519 -C "your.email@mail.com"
+```
+- SSH 公開鍵をコピーし、Githubに登録
+```
+% pbcopy < ~/.ssh/id_ed25519.pub
+```
+- 設定ファイル作成
+```
+% touch ~/.ssh/config
+% open ~/.ssh/config
+
+# 下記を追加
+Host github.com
+  IdentityFile ~/.ssh/id_ed25519
+  User git
+```
+- 接続確認
+```
+% ssh -T git@github.com
+```
+
+### NVM
+```
+% brew install nvm
+% mkdir ~/.nvm
+% vi ~/.zprofile
+# 下記を追加
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+% . /Users/$(whoami)/.zprofile
+% nvm -v
+0.40.3
+```
+
+- nodeインストール
+```
+% nvm ls-remote 22
+       v22.21.1   (Latest LTS: Jod)
+% nvm install v22.21.1
+% node -v
+v22.21.1
+% nvm alias default v22.21.1
+```
+
+### pnpm
+```
+brew install pnpm
+% pnpm --version
+10.20.0
+```
+
+### Visual Studio Code
+```
+% brew install --cask visual-studio-code
+% code --version
+1.105.1
+```
+
+### Android Studio
+```
+brew install --cask android-studio
+```
+
+### Docker Desktop for Mac
+```
+% brew install --cask docker
+% brew info --cask docker     
+==> docker-desktop: 4.49.0,208700 (auto_updates)
+```
+
+### Figma
+```
+% brew install figma
+% brew info figma
+==> figma: 125.9.10 (auto_updates)
+```
 
 ### リモートデスクトップ（Windows)
-
 ```
-brew install --cask windows-app
+% brew install --cask windows-app
+% brew info --cask windows-app
+==> windows-app: 11.2.5
 ```
 
-### Clipy
-
-クリップボード拡張アプリ
-
-```
-brew install --cask clipy
-softwareupdate --install-rosetta --agree-to-license
-```
