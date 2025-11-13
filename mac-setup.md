@@ -204,3 +204,9 @@ Python 3.14.0
 ==> windows-app: 11.2.5
 ```
 
+### Github CLI
+```
+% brew install gh
+% gh --version
+gh version 2.83.0 (2025-11-04)
+```
