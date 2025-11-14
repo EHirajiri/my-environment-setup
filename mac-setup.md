@@ -1,5 +1,11 @@
 # Mac setup
 
+> [!CAUTION]
+> 環境変数の設定は使用するシェルによって設定ファイルが異なります  
+> 使用する環境によって設定ファイル名は読み替えてください  
+> - zshの場合: /Users/$(whoami)/.zprofile  
+> - bashの場合: /Users/$(whoami)/.bash_profile  
+
 ## Homebrewをインストール
 ※ 最新の情報は[公式ページ](https://brew.sh/ja/)を参照
 ```
