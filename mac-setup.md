@@ -210,3 +210,8 @@ Python 3.14.0
 % gh --version
 gh version 2.83.0 (2025-11-04)
 ```
+
+### XCode
+
+[Appleの開発者向けページ](https://developer.apple.com/download/all/) からダウンドード
+
