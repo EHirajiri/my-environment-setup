@@ -221,3 +221,10 @@ gh version 2.83.0 (2025-11-04)
 
 [Appleの開発者向けページ](https://developer.apple.com/download/all/) からダウンドード
 
+### cocoapods
+```
+% brew install cocoapods
+% pod --version         
+1.16.2
+```
+
